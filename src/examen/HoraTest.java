@@ -1,14 +1,22 @@
 package examen;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.Test;
 
 class HoraTest {
+	public static boolean hora = true;
 
-	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testvalidarhora(int segundos, int minutos, int horas) {
+		if ((horas >= 0) && (minutos >= 0) && (segundos >= 0)) {
+			if (horas > 23) {
+				hora = false;
+			} else if (minutos > 59) {
+				hora = false;
+			} else if (segundos > 59) {
+				hora = false;
+			}
+		} else {
+			hora = false;
+		}
+
 	}
 
 }
